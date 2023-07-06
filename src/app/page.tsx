@@ -10,7 +10,12 @@ export default function Home() {
     <div>
       <button onClick={() => signIn()}>Login</button>
       <h1>{data?.user?.name}</h1>
-      <Image src={data?.user?.image ?? ''} alt="Imagem do Usuário" />
+      <Image
+        src={data?.user?.image ?? ''}
+        width={128}
+        height={128}
+        alt="Imagem do Usuário"
+      />
     </div>
   )
 }
