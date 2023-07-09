@@ -2,6 +2,7 @@ import './globals.css'
 import React from 'react'
 import { Poppins } from 'next/font/google'
 import { NextAuthProvider } from '@/providers/auth'
+import { Header } from '../components/Header'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -21,9 +22,12 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${poppins.className} min-h-screen bg-zinc-950 text-zinc-50`}
+        className={poppins.className}
       >
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <NextAuthProvider>
+          <Header />
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   )
